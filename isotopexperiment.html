@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="CSS/isotopexperiment.css">
+    <script src="JS/jquery-3.1.1.min.js"></script>
+    <script src="JS/isotope.js"></script>
+    <script src="JS/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Isotope - masonry layout mode</h1>
+    <div class="grid" id="upperGrid">
+        <div class="grid-item grid-item--width2">
+            1
+            <p>Stuff</p>
+            <p>Things</p>
+            <p>Other Stuff</p>
+            <p>Cool Things</p>
+        </div>
+        <div class="grid-item grid-item--height2">2
+            I think chickens have a lot of feathers.
+        </div>
+        <div class="grid-item">
+            <ol>
+                <li>Eric Cartman</li>
+                <li>Stan Marsh</li>
+                <li>Kyle Broflovski</li>
+                <li>Kenny McCormick</li>
+            </ol>
+        </div>
+        <div class="grid-item grid-item-autowidth">44</div>
+            <div class="grid-item grid-item--width2 grid-item--height2"><div id="app0" class="app">
+                Message: {{message}}
+                data: {{things}}
+            </div>
+        </div>
+        <div class="grid-item grid-item--width2">
+            <div id="app1" class="app">
+                Message: {{message}}
+                data: {{things}}
+            </div>
+        </div>
+        <div class="grid-item grid-item--width2">
+            <div id="app2" class="app">
+                <span v-bind:title="message">
+                    Hover mouse
+                </span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="grid">
+        <div class="grid-item grid-item--height2">
+            <div id="app3" class="app">
+                <span v-if="visible">
+                    I'm Visible
+                    <br>
+                    {{mainText}}
+                </span>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div id="app4" class="app">
+                <ol>
+                    <li v-for="todo in todos">
+                        {{todo.text}}
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="grid-item grid-item--width2">
+            <div id="app5" class="app">
+                <p>{{message}}</p>
+                <button v-on:click="reverseMessage">Reverse</button>
+            </div>
+        </div>
+        <div class="grid-item grid-item--height2">
+            <div id="appButton" class="app">
+                <button v-on:click="addItem">Add Item</button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div id="app6" class="app">
+                <p>{{message}}</p>
+                <input v-model="message" class="grid-item--input">
+            </div>
+        </div>
+        <div class="grid-item">
+            <div id="app7">
+                <button v-on:click="getItemFromServer">Server Says</button>
+                <ol>
+                    <todo-item v-for="item in theList" v-bind:todo="item"></todo-item>
+                </ol>
+                <input v-model="itemField" class="grid-item--input">
+                <button v-on:click="addItem">Add Item</button>
+
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="JS/JS.js"></script>
+<script src="JS/isotopexperiment.js"></script>
